@@ -21,7 +21,6 @@ func TestMixin_LoginEnv(t *testing.T) {
 		os.Unsetenv("DOCKER_USERNAME")
 		os.Unsetenv("DOCKER_PASSWORD")
 	}()
-
 	b, err := ioutil.ReadFile("testdata/login-input.yaml")
 	require.NoError(t, err)
 
