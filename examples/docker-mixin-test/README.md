@@ -1,6 +1,6 @@
-# My First Bundle
+# Docker Mixin Example Bundle
 
-This is an empty bundle that porter has created to get you started!
+This is an example bundle to show how to use the Docker mixin in Porter!
 
 # Contents
 
@@ -8,7 +8,19 @@ This is an empty bundle that porter has created to get you started!
 
 This is the porter manifest. See https://porter.sh/author-bundles/ for 
 details on every field and how to configure your bundle. This is a required
-file.
+file. The commands available in the docker mixin are docker pull, push, build, 
+run, remove, and login. 
+
+### docker pull
+
+### docker login
+Login has two optional parameters - username and password. To pass in the 
+username and password, you can either enter them in the yaml or set them 
+as environment variables and pass them in as credentials. In order to pass 
+them in as credentials, you need to add credentials section in the yaml. You 
+need to run porter credentials generate and then when you run porter install, 
+pass in the credentials by doing --cred or -c followed by the name of the 
+credential set.
 
 ## helpers.sh
 
