@@ -12,16 +12,7 @@ credentials:
   - name: DOCKER_PASSWORD
     env: DOCKER_PASSWORD
 
-parameters:
-- name: msg
-  description: a message for the whales to speak
-  type: string
-  default: "whale hello there!"
-  applyTo:
-  - say
-
 mixins:
-- exec
 - docker
 
 install:
@@ -50,14 +41,6 @@ upgrade:
     pull:
       name: docker/whalesay
       tag: latest
-
-say:
-- exec:
-    description: "Say Something"
-    command: ./helpers.sh
-    arguments:
-    - whalesay
-    - '"{{ bundle.parameters.msg }}"'
 
 uninstall:
 - docker:
